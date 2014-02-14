@@ -1,0 +1,58 @@
+﻿<h2>Sales Sample Request form B</h2><form name=qdbform method=POST onsubmit='return validateForm(this)' encType='multipart/form-data' action=https://www.quickbase.com/db/bismxsqqc?act=API_AddRecord&apptoken=cwfcy7gdzqrsyncqbi2bn4u4kr>
+<input type=hidden name=fform value=1>
+<table>
+<tr><td class=m>Qty</td>
+<td class=m><input type=text size=40 name=_fid_7 ></td></tr>
+<tr><td class=m>Related Product</td>
+<td class=m><input type=text size=40 name=_fid_8 ><br>
+* Developer note: Query app for table DBID_PRODUCTS (DBID is bismxsqqc to get 
+the product drop down <br>
+of related product IDs to get SKU, description, and List</td></tr>
+<tr><td class=m>Sku</td>
+<td class=m><input type=text size=40 name=_fid_9 ></td></tr>
+<tr><td class=m>Description</td>
+<td class=m><input type=text size=40 name=_fid_10 ></td></tr>
+<tr><td class=m>List</td>
+<td class=m><input type=text size=40 name=_fid_11 ></td></tr>
+<tr><td class=m>Related Sales Sample Request</td>
+<td class=m><input type=text size=40 name=_fid_12 ><br>
+* Developer note: Like the sales tax database, the user will first verify 
+contact, then add a related products to the sample request.</td></tr>
+<tr><td class=m>&nbsp;</td>
+<td class=m>&nbsp;</td></tr>
+</table><input type=hidden name=rdr value='http://'>
+<input type=submit value=Save>
+</form>
+<br />Powered by QuickBase <a href="http://quickbase.intuit.com/">Online Database</a>
+
+<script lang="javascript">
+function CheckForOther (item, origlen)
+	{
+	var sitem = item.options[item.selectedIndex];
+
+	if (item.selectedIndex == (item.length - 1))
+		{
+		var val = prompt ("ADD A NEW CHOICE:", "");
+
+		if (val == null)
+			item.selectedIndex = 0;
+		else	
+			{
+			var slen = item.length;
+
+			if (slen == origlen+1){
+				item.options[slen] = new Option (sitem.text, sitem.value);
+                        }
+			
+			item.options[item.length-2].text = val;
+			item.options[item.length-2].value = val;
+			item.selectedIndex = item.length-2;
+			}
+		}
+	}
+</script>
+<script lang=javascript>
+function validateForm(theForm)
+{
+}
+</script>
