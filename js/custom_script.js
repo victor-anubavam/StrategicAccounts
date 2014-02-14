@@ -1,19 +1,14 @@
 $(document).ready(function() {
-        $("#part-a input").blur(function(){
-            var valone = jQuery("#_fid_7").val();
-            var valtwo = jQuery("#_fid_13").val();
-            var valthree = jQuery("#_fid_18").val();
-            var error = 0;;
-           // error = 0;
-            for ( var i = 7; i<=18; i++ ) {
-                var id =  "_fid_"+i;
-                if ($("#"+id).val() == ''){
-                   error ++; 
-                }/*else {
-                   error--;
-                }*/
-            }
-            if (error == 0  && valone != '' && valtwo!='' && valthree!='')  {
+        $(".inputA").blur(function(){
+            var error = false;
+            $(".inputA").each(function() {
+                console.log('val::'+$(this).val());
+                if($(this).val() == '') {
+                    error = true;
+                }
+            });
+
+            if (!error)  {
                 jQuery("#part-b").css("display","block");
             }else{
                 jQuery("#part-b").css("display","none");
@@ -30,8 +25,8 @@ $(document).ready(function() {
        $("#qdbform").validate({
         rules: {
             _fid_7: "required",
-            _fid_8: "required",          
-            _fid_9: "required",                
+            _fid_8: "required",
+            _fid_9: "required",
             _fid_10: "required",
             _fid_11: "required",
             _fid_12: "required",
@@ -43,13 +38,13 @@ $(document).ready(function() {
             _fid_18: "required",
             f2_fid_7: "required",
             f2_fid_8: "required"
-        
+
         },
         // Specify the validation error messages
         messages: {
            _fid_7: "required",
-            _fid_8: "required",          
-            _fid_9: "required",                
+            _fid_8: "required",
+            _fid_9: "required",
             _fid_10: "required",
             _fid_11: "required",
             _fid_12: "required",
@@ -61,10 +56,10 @@ $(document).ready(function() {
             _fid_18: "required",
             f2_fid_7: "required",
             f2_fid_8: "required"
-        
+
            /* cNumber: "Customer number is required",
             cContactName: "Contact name is required",
-            cTele: {               
+            cTele: {
                 required: "Telephone is required",
                 usfaxFormat: "Enter a valid phone number"
             },
@@ -74,8 +69,8 @@ $(document).ready(function() {
                  usfaxFormat: "Enter a valid fax number"
             }            */
         },
-        
-      
+
+
         submitHandler: function(form) {
           /* if($("#fileuploadError").val()!=0) {
             $( "#loading" ).show();
@@ -96,8 +91,8 @@ $(document).ready(function() {
        // }
         }
     });
-   
-   
+
+
     var url = "./process.php";
     $.ajax({
         type: "POST",
@@ -141,10 +136,9 @@ $(document).ready(function() {
         return true;
     }*/
     $("#qdbform").submit(function() {
-   
+
 
 
         return false; // avoid to execute the actual submit of the form.
     });
 })
-

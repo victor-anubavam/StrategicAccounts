@@ -11,7 +11,7 @@
     </head>
     <body>
         <h2>Sales Sample Requests - Form A</h2>
-        <div id="loading" style="display: none;"><center style="margin-top: 30%;"><img src="css/loading.gif"/><center></div> 
+        <div id="loading" style="display: none;"><center style="margin-top: 30%;"><img src="css/loading.gif"/><center></div>
         <div id="iframeloading"><iframe style="width:50%;height:54px;border:none;" name="iframeUploader" id="iframeUploader"></iframe> </div>
         <form id="qdbform" name="qdbform" method="POST"  encType='multipart/form-data' action="./process.php">
             <input type="hidden" name="fform" value="1">
@@ -21,7 +21,7 @@
                 <dl>
                     <dt>Strategic Accounts Manager</dt>
                     <dd>
-                        <select id="_fid_7" name="_fid_7">
+                        <select class="inputA" id="_fid_7" name="_fid_7">
                             <option value="">Select Manager</option>
                             <option value="-58245491">Lispi, Lee</option>
                             <option selected="" value="-57450810">Sales, Sonny</option>
@@ -30,23 +30,23 @@
                     </dd>
 
                     <dt class=m>PO Number</dt>
-                    <dd class=m><input type=text size=40 name="_fid_8" id ="_fid_8" ></dt>
+                    <dd class=m><input class="inputA" type=text size=40 name="_fid_8" id ="_fid_8" ></dt>
 
                     <dt class=m>Ship Address</dt>
-                    <dd class=m><input type=text size=60 name="_fid_9" id = "_fid_9" ></dd>
+                    <dd class=m><input class="inputA" type=text size=60 name="_fid_9" id = "_fid_9" ></dd>
 
                     <dt class=m>Street 1</dt>
-                    <dd class=m><input type=text size=60 name="_fid_10" id ="_fid_10"></dd>
+                    <dd class=m><input class="inputA" type=text size=60 name="_fid_10" id ="_fid_10"></dd>
 
                     <dt class=m>Street 2</dt>
                     <dd class=m><input type=text size=60 name="_fid_11" id = "_fid_11" ></dd>
 
                     <dt class=m>City</dt>
-                    <dd class=m><input type=text size=60 name="_fid_12" id = "_fid_12" ></dd>
+                    <dd class=m><input class="inputA" type=text size=60 name="_fid_12" id = "_fid_12" ></dd>
 
                     <dt class=m>State/Region</dt>
                     <dd class=m>
-                        <select  name="_fid_13" id = "_fid_13" >
+                        <select class="inputA"  name="_fid_13" id = "_fid_13" >
                             <option>Alabama</option>
                             <option>Alaska</option>
                             <option>Arizona</option>
@@ -102,19 +102,19 @@
                     </dd>
 
                     <dt class=m>Postal Code</dt>
-                    <dd class=m><input type=text size=60 name="_fid_14" id = "_fid_14" ></dd>
+                    <dd class=m><input class="inputA" type=text size=60 name="_fid_14" id = "_fid_14" ></dd>
 
                     <dt class=m>Country</dt>
-                    <dd class=m><input type=text size=60 name=_fid_15 id = "_fid_15"></dd>
+                    <dd class=m><input class="inputA" type=text size=60 name=_fid_15 id = "_fid_15"></dd>
 
                     <dt class=m>Contact</dt>
-                    <dd class=m><input type=text size=40 name=_fid_16 id = "_fid_16"></dd>
+                    <dd class=m><input class="inputA" type=text size=40 name=_fid_16 id = "_fid_16"></dd>
 
                     <dt class=m>Phone</dt>
-                    <dd class=m><input type=text size=40 name=_fid_17 id = "_fid_17"></dd>
+                    <dd class=m><input class="inputA" type=text size=40 name=_fid_17 id = "_fid_17"></dd>
 
                     <dt class=m>Purpose of Sample Size</dt>
-                    <dd class=m><textarea  name=_fid_18 id = "_fid_18" rows=6 cols=60></textarea></dd>
+                    <dd class=m><textarea class="inputA" name=_fid_18 id = "_fid_18" rows=6 cols=60></textarea></dd>
                 </dl>
             </div>
             <div id="part-b">
@@ -143,9 +143,9 @@
                 </dl>
                 <div class="form_submit"><input type=submit value=Save></div>
             </div>
-            
+
 
             <input type=hidden name=rdr value='http://'>
         </form>
-    </body>   
+    </body>
 </html>
