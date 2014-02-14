@@ -29,3 +29,28 @@ dl dd {
     margin:2px 0;
     padding:5px 0;
 }
+input[type="text"] {
+    width: 215px;
+}
+textarea {
+  width: 215px;
+}
+h2 {
+    border-bottom: 1px solid #CCCCCC;
+    padding-bottom: 20px;
+    text-align: center;
+}
+#qdbform{
+  background: none repeat scroll 0 0 #E9E9E7;
+  border-radius: 20px 20px 20px 20px;
+  margin: 0 auto;
+  padding: 15px;
+  width: 700px;
+}
+
+.form_submit {
+    text-align: center;
+}
+.form_submit input{
+  font-size: 16px;
+}
