@@ -17,7 +17,8 @@ $dbIdReqProd = 'bismxsqqc';
 if(isset($_POST['_fid_7'])){
 	$quickbase = new QuickBase($usrName, $pwd, true, $dbIdStart,$appToken, $qbDomain, $expTime);
 	$qbReqProd = new QuickBase($usrName, $pwd, true, $dbIdReqProd,$appToken, $qbDomain, $expTime);
-	addStrategicAccountsManagement ($quickbase, $qbReqProd);
+	$status = addStrategicAccountsManagement ($quickbase, $qbReqProd);
+	echo json_encode($status);
 } else if ($_POST['type'] == 'getProduct') {
 	$products = getProductList($usrName, $pwd, $dbIdProduct ,$appToken, $qbDomain, $expTime);
 	echo json_encode($products);

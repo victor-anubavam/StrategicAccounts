@@ -78,13 +78,14 @@ function addStrategicAccountsManagement ($quickbase, $qbReqProd){
     	$status = true;
 		$startRid = (int) $res->rid;
 
-		addReqProduct ($startRid,$qbReqProd);
+		$status = addReqProduct ($startRid,$qbReqProd);
     }
-
+	return $status;
 }
 
 function addReqProduct ($stRid,  $qb) {
 	//echo 'rid: '.$stRid;
+	$status = false;
 	$salesMan = $_POST['_fid_7'];
 
 	$fields = array(
@@ -115,19 +116,20 @@ function addReqProduct ($stRid,  $qb) {
 		);
 	//print_r($fields);
 	$res = $qb->add_record($fields);
-	$status = false;
+
     if($res->errcode == 0){
 		$rid = (int) $res->rid;
 		//echo 'rid:'. $rid;
 		$res = $qb->edit_record($rid, $fields);
 		if($res->errcode == 0) {
 			//print_r($res);
+			$status = true;
 		}else {
-			echo 'falied to update';
+			$status = false;
 		}
 
 	}
-
+	return $status;
 }
 
 ?>
