@@ -11,6 +11,7 @@
     </head>
     <body>
         <h2>Sales Sample Requests - Form A</h2>
+        <div id="iframeloading"><iframe style="width:50%;height:54px;border:none;" name="iframeUploader" id="iframeUploader"></iframe> </div>
         <form id="qdbform" name="qdbform" method="POST"  encType='multipart/form-data' action="./process.php">
             <input type="hidden" name="fform" value="1">
             <!-- date of submission -->
@@ -141,7 +142,7 @@
                 </dl>
 
             </div>
-            <div><input type=submit value=Save></div>
+            <div class="form_submit"><input type=submit value=Save></div>
 
             <input type=hidden name=rdr value='http://'>
         </form>
