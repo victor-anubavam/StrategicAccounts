@@ -54,3 +54,40 @@ h2 {
 .form_submit input{
   font-size: 16px;
 }
+.error {
+ /* clear: both;*/
+  color: #FF0000;
+  /*float: left;*/
+  font-size: 13px;
+  /*margin-left: 212px;*/
+}
+label.error{
+   padding: 5px 0 0 5px;
+    font-size: 11px;
+    padding: 5px 0 0 5px;
+    text-transform: capitalize;
+}
+input.error{
+  border: 1px solid #FF0000;
+}
+#loading center{
+  background: none repeat scroll 0 0 #EEEEEE;
+  left: 44%;
+  position: relative;
+  width: 191px;
+}
+
+#loading {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 2000px;
+    left: 43%;
+    margin-left: -629px;
+    margin-top: -400px;
+    position: fixed;
+    top: 50%;
+    width: 110%;
+    z-index: 9000;
+}
+#part-b{
+  display: none;
+}

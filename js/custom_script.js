@@ -1,4 +1,103 @@
 $(document).ready(function() {
+        $("#part-a input").blur(function(){
+            var valone = jQuery("#_fid_7").val();
+            var valtwo = jQuery("#_fid_13").val();
+            var valthree = jQuery("#_fid_18").val();
+            var error = 0;;
+           // error = 0;
+            for ( var i = 7; i<=18; i++ ) {
+                var id =  "_fid_"+i;
+                if ($("#"+id).val() == ''){
+                   error ++; 
+                }/*else {
+                   error--;
+                }*/
+            }
+            if (error == 0  && valone != '' && valtwo!='' && valthree!='')  {
+                jQuery("#part-b").css("display","block");
+            }else{
+                jQuery("#part-b").css("display","none");
+            }
+        });
+        $( document ).ajaxStart(function() {
+            $( "#loading" ).show();
+        });
+         $( document ).ajaxStop(function() {
+            $( "#loading" ).hide();
+        });
+       $("#f2_fid_10").attr("readonly","true");
+       $("#f2_fid_11").attr("readonly","true");
+       $("#qdbform").validate({
+        rules: {
+            _fid_7: "required",
+            _fid_8: "required",          
+            _fid_9: "required",                
+            _fid_10: "required",
+            _fid_11: "required",
+            _fid_12: "required",
+             _fid_13: "required",
+            _fid_14: "required",
+            _fid_15: "required",
+            _fid_16: "required",
+            _fid_17: "required",
+            _fid_18: "required",
+            f2_fid_7: "required",
+            f2_fid_8: "required"
+        
+        },
+        // Specify the validation error messages
+        messages: {
+           _fid_7: "required",
+            _fid_8: "required",          
+            _fid_9: "required",                
+            _fid_10: "required",
+            _fid_11: "required",
+            _fid_12: "required",
+             _fid_13: "required",
+            _fid_14: "required",
+            _fid_15: "required",
+            _fid_16: "required",
+            _fid_17: "required",
+            _fid_18: "required",
+            f2_fid_7: "required",
+            f2_fid_8: "required"
+        
+           /* cNumber: "Customer number is required",
+            cContactName: "Contact name is required",
+            cTele: {               
+                required: "Telephone is required",
+                usfaxFormat: "Enter a valid phone number"
+            },
+            cEmail: "Please enter a valid email address",
+            cFax: {
+                required : "Fax is required",
+                 usfaxFormat: "Enter a valid fax number"
+            }            */
+        },
+        
+      
+        submitHandler: function(form) {
+          /* if($("#fileuploadError").val()!=0) {
+            $( "#loading" ).show();
+           }*/
+            //form.submit();
+               //  if (validateForm()) {
+            var url = "./process.php"; // the script where you handle the form input.
+
+            $.ajax({
+               type: "POST",
+               url: url,
+               data: $("#qdbform").serialize(), // serializes the form's elements.
+               success: function(data)
+               {
+                   alert(data); // show response from the php script.
+               }
+             });
+       // }
+        }
+    });
+   
+   
     var url = "./process.php";
     $.ajax({
         type: "POST",
@@ -27,9 +126,9 @@ $(document).ready(function() {
         data: {type:'getProductDetails', rid:rid},
         success: function(data){
             var result = data.result;
-            alert (result);
+            //alert (result);
             var rid    = result.rid;
-            alert(rid);
+            //alert(rid);
             var recs   = result.recs;
             //alert (data);
             $('#f2_fid_9').val(recs[0]);
@@ -38,23 +137,11 @@ $(document).ready(function() {
         }
         });
     });
-    function validateForm() {
+   /* function validateForm() {
         return true;
-    }
+    }*/
     $("#qdbform").submit(function() {
-        if (validateForm()) {
-            var url = "./process.php"; // the script where you handle the form input.
-
-            $.ajax({
-               type: "POST",
-               url: url,
-               data: $("#qdbform").serialize(), // serializes the form's elements.
-               success: function(data)
-               {
-                   alert(data); // show response from the php script.
-               }
-             });
-        }
+   
 
 
         return false; // avoid to execute the actual submit of the form.
