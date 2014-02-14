@@ -13,7 +13,14 @@
         <h2>Sales Sample Requests - Form A</h2>
         <div id="loading" style="display: none;"><center style="margin-top: 30%;"><img src="css/loading.gif"/><center></div>
         <div id="iframeloading"><iframe style="width:50%;height:54px;border:none;" name="iframeUploader" id="iframeUploader"></iframe> </div>
+        <div class="success">
+            <b><i>Request Successfully Submitted</i></b>
+        </div>
+        <div class="fail">
+            <b><i>Failed to Submitted. Please try again</i></b>
+        </div>
         <form id="qdbform" name="qdbform" method="POST"  encType='multipart/form-data' action="./process.php">
+
             <input type="hidden" name="fform" value="1">
             <!-- date of submission -->
             <input type="hidden" name="_fid_6" id="_fid_6" value="<?php echo date("m-d-Y");?>">

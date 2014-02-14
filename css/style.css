@@ -91,3 +91,27 @@ input.error{
 #part-b{
   display: none;
 }
+.success {
+  border: 1px dotted #000000;
+  color: #199615;
+  font-size: 13px;
+  margin-bottom: 10px;
+  padding: 12px 12px;
+  text-align: left;
+  width: 700px;
+  margin: auto;
+  text-align: center;
+  display: none;
+}
+.fail {
+  border: 1px dotted #000000;
+  color: #FF0000;
+  font-size: 13px;
+  margin-bottom: 10px;
+  padding: 12px 12px;
+  text-align: left;
+  width: 700px;
+  margin: auto;
+  text-align: center;
+  display: none;
+}

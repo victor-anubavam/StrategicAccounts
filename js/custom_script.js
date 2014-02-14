@@ -2,7 +2,7 @@ $(document).ready(function() {
         $(".inputA").blur(function(){
             var error = false;
             $(".inputA").each(function() {
-                console.log('val::'+$(this).val());
+                //console.log('val::'+$(this).val());
                 if($(this).val() == '') {
                     error = true;
                 }
@@ -72,6 +72,8 @@ $(document).ready(function() {
 
 
         submitHandler: function(form) {
+             $('.success').hide();
+             $('.fail').hide();
           /* if($("#fileuploadError").val()!=0) {
             $( "#loading" ).show();
            }*/
@@ -82,10 +84,18 @@ $(document).ready(function() {
             $.ajax({
                type: "POST",
                url: url,
+               dataType: 'text',
                data: $("#qdbform").serialize(), // serializes the form's elements.
                success: function(data)
                {
-                   alert(data); // show response from the php script.
+                   //alert(data); // show response from the php script.
+                   if (data == true) {
+                    //alert ('succ')
+                    $('.success').show();
+                    $("#qdbform").hide();
+                   } else {
+                    $('.fail').show();
+                   }
                }
              });
        // }
