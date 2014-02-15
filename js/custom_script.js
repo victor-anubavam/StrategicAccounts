@@ -1,6 +1,6 @@
 $(document).ready(function() {
         //$("#_fid_17").mask("?(999) 999-9999");
-        $(".inputA").blur(function(){
+        function validateFormA() {
             var error = false;
             $(".inputA").each(function() {
                 //console.log('val::'+$(this).val());
@@ -11,9 +11,18 @@ $(document).ready(function() {
 
             if (!error)  {
                 jQuery("#part-b").css("display","block");
+                $('#add-product').hide();
             }else{
                 jQuery("#part-b").css("display","none");
+                $('#add-product').show();
+                $('#form-a-fail').show();
             }
+        }
+        $(".inputA").blur(function(){
+                validateFormA();
+        });
+        $("#btnAddPrd").click(function(){
+                validateFormA();
         });
         $( document ).ajaxStart(function() {
             $( "#loading" ).show();

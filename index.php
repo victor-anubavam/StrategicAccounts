@@ -77,6 +77,12 @@
                     <dt class=m>Purpose of Sample Size</dt>
                     <dd class=m><textarea class="inputA" name=_fid_18 id = "_fid_18" rows=6 cols=60></textarea></dd>
                 </dl>
+                <div class="form_submit" id="add-product">
+                    <div  id="form-a-fail">
+                    <b><i>Please fill all the above fields to add product</i></b>
+                    </div>
+                    <input id="btnAddPrd" type="button" value="Add Product">
+                </div>
             </div>
             <div id="part-b">
                 <input type=hidden name=fform value=1>
