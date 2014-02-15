@@ -1,4 +1,5 @@
 $(document).ready(function() {
+        //$("#_fid_17").mask("?(999) 999-9999");
         $(".inputA").blur(function(){
             var error = false;
             $(".inputA").each(function() {

@@ -17,9 +17,9 @@ dl {
 }
 
 dl dt {
-    color:#000;
+    color:#58595B;
     float:left;
-    font-weight:bold;
+    font-size: 13px;
     margin-right:10px;
     padding:5px;
     width:250px;
@@ -31,6 +31,12 @@ dl dd {
 }
 input[type="text"] {
     width: 215px;
+    color: #58595B;
+    font-size: 13px;
+}
+select {
+    color: #58595B;
+    font-size: 13px;
 }
 textarea {
   width: 215px;
@@ -114,4 +120,8 @@ input.error{
   margin: auto;
   text-align: center;
   display: none;
+}
+
+#btnSubmit {
+    padding: 7px;
 }
